@@ -1,0 +1,38 @@
+<annotation>
+	<folder>mud_house</folder>
+	<filename>mud_house_78.jpeg</filename>
+	<path>/Users/Mahmud/Desktop/ML/CSE 4000 Thesis/RealTimeHomeDetection/workspace/images/dataset/mud_house/mud_house_78.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>380</width>
+		<height>226</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Mud House</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>24</xmin>
+			<ymin>32</ymin>
+			<xmax>267</xmax>
+			<ymax>196</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Mud House</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>235</xmin>
+			<ymin>57</ymin>
+			<xmax>373</xmax>
+			<ymax>187</ymax>
+		</bndbox>
+	</object>
+</annotation>

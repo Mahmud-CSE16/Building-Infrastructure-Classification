@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>sky_building</folder>
+	<filename>sky_building_40.jpeg</filename>
+	<path>/Users/Mahmud/Desktop/ML/CSE 4000 Thesis/RealTimeHomeDetection/workspace/images/dataset/sky_building/sky_building_40.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>551</width>
+		<height>800</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Sky Building</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>67</xmin>
+			<ymin>26</ymin>
+			<xmax>497</xmax>
+			<ymax>781</ymax>
+		</bndbox>
+	</object>
+</annotation>

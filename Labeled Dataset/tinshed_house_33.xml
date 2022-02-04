@@ -1,0 +1,26 @@
+<annotation>
+	<folder>tin_shade_house</folder>
+	<filename>tinshed_house_33.jpeg</filename>
+	<path>/Users/Mahmud/Desktop/ML/CSE 4000 Thesis/RealTimeHomeDetection/workspace/images/dataset/tin_shade_house/tinshed_house_33.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>266</width>
+		<height>190</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Tin-shade House</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>16</xmin>
+			<ymin>21</ymin>
+			<xmax>259</xmax>
+			<ymax>161</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>mosque</folder>
+	<filename>mosque_137.jpg</filename>
+	<path>/Users/Mahmud/Desktop/ML/CSE 4000 Thesis/RealTimeHomeDetection/workspace/images/dataset/mosque/mosque_137.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>502</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Mosque</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>24</xmin>
+			<ymin>59</ymin>
+			<xmax>447</xmax>
+			<ymax>465</ymax>
+		</bndbox>
+	</object>
+</annotation>

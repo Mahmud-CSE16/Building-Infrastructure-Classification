@@ -1,0 +1,26 @@
+<annotation>
+	<folder>building_house</folder>
+	<filename>building_house_164.jpg</filename>
+	<path>/Users/Mahmud/Desktop/ML/CSE 4000 Thesis/RealTimeHomeDetection/workspace/images/dataset/building_house/building_house_164.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>450</width>
+		<height>299</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Building House</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>43</xmin>
+			<ymin>71</ymin>
+			<xmax>438</xmax>
+			<ymax>221</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>temple</folder>
+	<filename>temple_190.jpeg</filename>
+	<path>/Users/Mahmud/Desktop/ML/CSE 4000 Thesis/RealTimeHomeDetection/workspace/images/dataset/temple/temple_190.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>375</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Temple</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>121</xmin>
+			<ymin>50</ymin>
+			<xmax>405</xmax>
+			<ymax>369</ymax>
+		</bndbox>
+	</object>
+</annotation>

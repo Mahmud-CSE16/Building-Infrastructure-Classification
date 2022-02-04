@@ -1,0 +1,5 @@
+classes = 6
+train = images/dataset/train.txt
+valid = images/dataset/test.txt
+names = images/dataset/classes.names
+backup = backup
