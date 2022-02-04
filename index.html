@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Infrastructure Classification with Hybrid Convolutional Neural Network Architecture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <style>
+        *{
+            color: #fff;;
+            margin: 0;
+            outline: none;
+            box-sizing: border-box;
+        }        
+
+        html {
+            overflow:   scroll;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent; /* make scrollbar transparent */
+        }
+
+        body{
+            font-family: sans-serif;
+            background-color: #1E1F31;
+            overflow-x: hidden;
+        }
+       
+        .wrapper{
+            position: relative;
+            /* height: 100vh; */
+            overflow: hidden;
+        }
+        header{
+            padding: 50px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 15px;
+        }
+        header ul li a{
+            color: #aba9b4;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all ease 0.5s;
+        }
+        header ul li a:hover{
+            color: #f09053;
+        }
+        header ul li a.btn{
+            display: inline-block;
+            width: 180px;
+            height: 60px;
+            line-height: 60px;
+            background-color: #f09053;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 50px;
+            transition: all ease 0.5s;
+        }
+        header ul li a.btn:hover{
+            background-color: #615c59;
+        }
+
+        .content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px 50px 0;
+            align-items: center;
+            align-content: center;
+        }
+        .text{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: justify;
+            width:60%;
+        }
+        .text p{
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 30px;
+            color: #fff;
+        }
+        .text p span{
+            font-size: 20px;
+            font-weight: 500;
+            color: #f09053;
+        }
+        .text a{
+            position: relative;
+            display: inline-block;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            padding: 18px 30px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            margin-top: 60px;
+        }
+        .text a:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            background-color: #f09053;
+            z-index: -1;
+            transition: all ease 0.5s;
+        }
+        .text a:hover:before{
+            width: 100%;
+        }
+
+
+        /* .img-container{
+            
+            align-items: center; 
+            align-content: center; 
+            width: 100%;
+        } */
+        .img{
+            position: relative;
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(420px, #f08f538c, transparent 50%);
+            margin-top: -50px;
+        }
+        .email-icon{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .social-icons{
+            height: 400px;
+            width: 400px;
+            animation: rotation 60s linear infinite;
+        }
+        @keyframes rotation {
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        .icon-dev{
+            display: flex;
+            position: absolute;
+            height: 80px;
+            width: 80px;
+            border-radius: 40px;
+            border: 1px solid #f09053;
+        }
+
+        .social-icons img{
+            margin: auto;
+            height: 45px;
+            width: 45px;
+            animation: img-rotation 60s linear infinite;
+        }
+        @keyframes img-rotation {
+            100%{
+                transform: rotate(-360deg);
+            }
+        }
+        .social-icons div:nth-child(1){
+            top: 0;
+            left: 40%;
+        }
+        .social-icons div:nth-child(2){
+            top: 26%;
+            right: 0;
+        }
+        .social-icons div:nth-child(4){
+            top: 26%;
+            left: 0;
+        }
+        .social-icons div:nth-child(3){
+            top: 75%;
+            right: 15%;
+        }
+        .social-icons div:nth-child(5){
+            top: 75%;
+            left: 15%;
+        }
+
+
+        .wave{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+        }
+        .wave:before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/wave.svg) repeat-x;
+            background-size: cover;
+            background-position: -1000px 0;
+            opacity: .2;
+            animation: waveOne 60s linear infinite; 
+        }
+        @keyframes waveOne {
+            50%{
+                background-position: 0 0;
+            }
+        }
+        .wave:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/wave.svg) repeat-x;
+            background-size: cover;
+            background-position: 2732px 0;
+            opacity: .3;
+            animation: waveOne 120s linear infinite; 
+        }
+
+
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 1120px) {
+            .text{
+                width:100%;
+                margin-bottom: 100px;
+            }
+        }
+
+
+        /*SUBMENU*/
+        ul ul{
+            max-width: 250px;
+            position: absolute;
+            padding: 10px 0;
+            opacity: 0;
+            z-index: -9999;
+            transition: all ease 0.5s;
+        }
+        ul li:hover ul{
+            opacity: 1;
+            z-index: 9;
+            padding: 30px 0;
+        }
+        ul ul li{
+            margin: 0;
+            width: 100%;
+        }
+        ul ul li a{
+            width: 100%;
+            display: inline-block;
+            padding: 20px;
+            background-color: #383a58;
+            color: #fff;
+        }
+        ul ul li:first-child a{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        ul ul li:last-child a{
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        ul ul li a:hover{
+            background-color: #f09053;
+            color: #fff;
+        }
+
+
+        /* Image Gellary */
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        /* Create four equal columns that sits next to each other */
+        .column {
+            -ms-flex: 16.66%; /* IE10 */
+            flex: 16.66%;
+            max-width: 16.66%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+
+        /* Authors */
+        .container
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .container .card
+        {
+            width: 350px;
+            height: 400px;
+            padding: 30px 10px;
+            margin: 30px;
+            background: black;
+            box-shadow: 5px 5px 15px rgba(128,128,128,.3);
+            border-radius: 20px;
+        }
+        .container .card .card-content
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container .card .card-content .imgBx
+        {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            position: relative;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .container .card .card-content .imgBx img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container .card .card-content .contentBx h4
+        {
+            color: #DDD;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .container .card .card-content .contentBx h5
+        {
+            color: #6c758f;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .container .card .card-content .sci
+        {
+            margin-top: 20px;
+        }
+        .container .card .card-content .sci a
+        {
+            text-decoration: none;
+            color: #6c758f;
+            font-size: 30px;
+            margin: 10px;
+            transition: color 0.4s;
+        }
+        .container .card .card-content .sci i:hover
+        {
+            color: #f09053;
+        }
+
+
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 1000px) {
+            .column {
+                -ms-flex: 33.33%;
+                flex: 33.33%;
+                max-width: 33.33%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 100%;
+            }
+
+            header{
+                padding: 20px 30px 0;
+                text-align: center;
+            }
+
+            header h1{
+                font-size: 23px;
+            }
+
+            .content{
+                padding: 20px 30px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <header>
+        <div class="logo">
+            <!-- <img src="images/logo.svg" alt=""> -->
+            <h1  style="color: #f09053;">Building Infrastructure Classification with Hybrid Convolutional Neural Network Architecture</h1>
+        </div>
+        <!-- <nav>
+            <ul>
+                <li><a href="#">Integration</a>
+                    <ul>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">Ruby</a></li>
+                        <li><a href="#">Python</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a class="btn" href="#">Sign Up</a></li>
+            </ul> -->
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="text">
+            <p><span>Abstract—</span> Since the modernization of structural and architectural building construction, it is now a developing research field for automated building infrastructure categorization and detection for both computer and architectural researchers for the intelligence system. In this research, various types of building infrastructure are classified, such as mosques, temples, brick houses, tin shed houses, and so on. Despite the lack of a standard dataset in this research area, a new dataset called the building infrastructure image dataset is introduced. For the image classification, two types of convolutional neural networks (CNN) architecture are proposed, the first one is sequential CNN and another one is hybrid CNN. The performance of these two architectures is evaluated on the proposed dataset. Again, the proposed architecture’s performance is compared with popular transfer learning models with or without pre-trained weights. With the pre-trained weights, the transfer learning models perform better than the ones without pre-trained weights, which is experimented on in the proposed dataset. The proposed hybrid CNN model outperforms the sequential CNN model as well as popular transfer learning models such as MobileNet and DenseNet without pre-trained weights on the proposed dataset.
+                Index Terms—Building Infrastructure, Image Classification, Sequential CNN, Hybrid CNN, Transfer Learning.
+                </p>
+            <a href="#" class="btn">Download Dataset</a>
+            <a href="#" class="btn">View The Paper</a>
+        </div>
+        <div class="img-container">
+            <div class="img">
+                <div class="social-icons">
+                    <div class="icon-dev"><img src="images/icons/mosque.png" alt=""></div>
+                    <div class="icon-dev"><img src="images/icons/building.png" alt=""></div>
+                    <div class="icon-dev"><img src="images/icons/temple.png" alt=""></div>
+                    <div class="icon-dev"><img src="images/icons/tin_shed.png" alt=""></div>
+                    <div class="icon-dev"><img src="images/icons/mud_house.png" alt=""></div>
+                </div>
+                <img class="email-icon" width="120px" src="images/icons/building_logo.png" alt="">
+            </div>
+        </div>
+
+        
+        <!-- Gellary -->
+        <div class="header" style="width: 100%; margin-top: 80px; margin-bottom: 20px;">
+            <h1 style="color: #f09053;">Dataset Samples</h1>
+            <p style="font-weight: 300;"> The dataset contains 1500 images divided into six classes. Brick houses, mosques, temples, skyscrapers, tin shed houses, and mud houses are among the classes.</p>
+        </div>
+
+        <div class="row"> 
+            <div class="column">
+                <img src="images/data/building_house_4.jpg" style="width:100%">
+                <img src="images/data/building_house_6.jpg" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="images/data/mosque_16.jpeg" style="width:100%">
+                <img src="images/data/mosque_25.jpeg" style="width:100%">
+            </div>  
+            <div class="column">
+                <img src="images/data/temple_2.jpg" style="width:100%">
+                <img src="images/data/temple_16.jpeg" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="images/data/sky_building_8.jpg" style="width:100%">
+                <img src="images/data/tinshed_house_17.jpeg" style="width:100%">
+
+            </div>
+            <div class="column">
+                <img src="images/data/tinshed_house_16.jpeg" style="width:100%">
+                <img src="images/data/sky_building_5.jpg" style="width:100%">
+
+            </div>  
+            <div class="column">
+                <img src="images/data/mud_house_18.jpeg" style="width:100%">
+                <img src="images/data/mud_house_35.jpg" style="width:100%">
+            </div>
+        </div>
+
+        <!-- Authors -->
+        <div class="header" style="width: 100%; margin-top: 80px; margin-bottom: 20px;">
+            <h1 style="color: #f09053;">Authors</h1>
+            <p style="font-weight: 300;">Brains behind the thesis work.</p>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="imgBx">
+                        <img src="images/masudul-sir.jpeg" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h4>Dr Sk. Md. Masudul Ahsan</h4>
+                        <h5>Professor, <br/> Department of CSE, KUET</h5>
+                    </div>
+                    <div class="sci">
+                        <a href="https://www.kuet.ac.bd/cse/smmasudul/index.php?pg=publication/" target="blank"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/sk-md-masudul-ahsan-35050139/" target="blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="mailto:smahsan@cse.kuet.ac.bd" target="blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="imgBx">
+                        <img src="images/faisal.jpeg" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h4>Faisal Ahmed</h4>
+                        <h5>Student, <br/> Department of CSE, KUET</h5>
+                    </div>
+                    <div class="sci">
+                        <a href="https://github.com/FaisalAhmedBijoy" target="blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/faisal-ahmed-2a71581b1/" target="blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="mailto:faisal.cse16.kuet@gmail.com" target="blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="imgBx">
+                        <img src="images/mahmud.jpeg" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h4>Md. Mahmudul Islam</h4>
+                        <h5>Student, <br/> Department of CSE, KUET</h5>
+                    </div>
+                    <div class="sci">
+                        <a href="https://mahmud.prottoy.com.bd/" target="blank" ><i class="fa fa-globe" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/mahmudul7959/" target="blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="mailto:mahmudul7959@gmail.com" target="blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
+    </div>
+
+
+    <div style="height: 130px;">
+        <!-- <img src="images/wave.svg" alt=""> -->
+    </div>
+
+    <div class="wave" style="height: 130px;">
+        <!-- <img src="images/wave.svg" alt=""> -->
+    </div>
+
+</div>
+
+
+</body>
+</html>
