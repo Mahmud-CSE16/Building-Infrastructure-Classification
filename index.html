@@ -9,6 +9,7 @@
         *{
             color: #fff;;
             margin: 0;
+            padding: 0;
             outline: none;
             box-sizing: border-box;
         }        
@@ -85,8 +86,8 @@
             width:60%;
         }
         .text p{
-            font-weight: 300;
-            font-size: 17px;
+            font-weight: 400;
+            font-size: 18px;
             line-height: 30px;
             color: #fff;
         }
@@ -95,7 +96,7 @@
             font-weight: 500;
             color: #f09053;
         }
-        .text a{
+        .text .btn{
             position: relative;
             display: inline-block;
             font-size: 18px;
@@ -105,11 +106,11 @@
             padding: 18px 30px;
             letter-spacing: 2px;
             font-weight: 500;
-            margin-top: 60px;
+            margin-top: 40px;
             margin-left: 5px;
             margin-right: 5px;
         }
-        .text a:before{
+        .text .btn:before{
             content: '';
             position: absolute;
             top: 0;
@@ -121,7 +122,7 @@
             z-index: -1;
             transition: all ease 0.5s;
         }
-        .text a:hover:before{
+        .text .btn:hover:before{
             width: 100%;
         }
 
@@ -317,6 +318,7 @@
         /* Authors */
         .container
         {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -327,7 +329,7 @@
             width: 350px;
             height: 400px;
             padding: 30px 10px;
-            margin: 30px;
+            margin: 20px;
             background: black;
             box-shadow: 5px 5px 15px rgba(128,128,128,.3);
             border-radius: 20px;
@@ -430,7 +432,7 @@
     <header>
         <div class="logo">
             <!-- <img src="images/logo.svg" alt=""> -->
-            <h1  style="color: #f09053;">Building Infrastructure Classification with Hybrid Convolutional Neural Network Architecture</h1>
+            <h1  style="color: #f09053;">Building Infrastructure Classification & Detection</h1>
         </div>
         <!-- <nav>
             <ul>
@@ -450,13 +452,12 @@
         </nav>
     </header>
 
+    <!-- Top Section -->
     <div class="content">
         <div class="text">
-            <p><span>Abstract—</span> Since the modernization of structural and architectural building construction, it is now a developing research field for automated building infrastructure categorization and detection for both computer and architectural researchers for the intelligence system. In this research, various types of building infrastructure are classified, such as mosques, temples, brick houses, tin shed houses, and so on. Despite the lack of a standard dataset in this research area, a new dataset called the building infrastructure image dataset is introduced. For the image classification, two types of convolutional neural networks (CNN) architecture are proposed, the first one is sequential CNN and another one is hybrid CNN. The performance of these two architectures is evaluated on the proposed dataset. Again, the proposed architecture’s performance is compared with popular transfer learning models with or without pre-trained weights. With the pre-trained weights, the transfer learning models perform better than the ones without pre-trained weights, which is experimented on in the proposed dataset. The proposed hybrid CNN model outperforms the sequential CNN model as well as popular transfer learning models such as MobileNet and DenseNet without pre-trained weights on the proposed dataset.
-                Index Terms—Building Infrastructure, Image Classification, Sequential CNN, Hybrid CNN, Transfer Learning.
-                </p>
-            <a href="https://github.com/Mahmud-CSE16/Building-Infrastructure-Classification" target="blank" class="btn">View Dataset</a>
-            <a href="#" target="blank" class="btn">View The Paper</a>
+            <p><span>Hello there -- </span>In this article we will talk about our final year thesis work on Building Infrastructure Classification & Detection. We are from <a href="https://www.kuet.ac.bd/" >Khulna University of Engineering & Technology (KUET). </a> Firstly, for thesis work we proposed new dataset called building infrastructure dataset. Then we will talk about Building Infrastructure Classification methodology based on CNN. Finaly, we move on to Object Ditection to detect & identify the building by SSD MobileNet and YOLO.</p>
+            <a class="btn" href="https://github.com/Mahmud-CSE16/Building-Infrastructure-Classification" target="blank" class="btn">View Dataset</a>
+            <a class="btn" href="#" target="blank" class="btn">View The Paper</a>
         </div>
         <div class="img-container">
             <div class="img">
@@ -471,8 +472,25 @@
             </div>
         </div>
 
+
+
+        <!-- Publication -->
+
+        <div class="header" style="width: 100%; margin-top: 80px; margin-bottom: 30px;">
+            <h1 style="color: #f09053;">Publication</h1>
+            <p style="font-weight: 300;"> 5th International Conference on Electrical Information and Communication Technology (EICT 2021)</p>
+        </div>
+
+       <div class="text" style="width: 100%;">
+            <h2 style="color: #f09053; margin-bottom: 10px;">Building Infrastructure Classification with Hybrid Convolutional Neural Network Architecture</h2>
+            <p><span>Abstract—</span> Since the modernization of structural and architectural building construction, it is now a developing research field for automated building infrastructure categorization and detection for both computer and architectural researchers for the intelligence system. In this research, various types of building infrastructure are classified, such as mosques, temples, brick houses, tin shed houses, and so on. Despite the lack of a standard dataset in this research area, a new dataset called the building infrastructure image dataset is introduced. For the image classification, two types of convolutional neural networks (CNN) architecture are proposed, the first one is sequential CNN and another one is hybrid CNN. The performance of these two architectures is evaluated on the proposed dataset. Again, the proposed architecture’s performance is compared with popular transfer learning models with or without pre-trained weights. With the pre-trained weights, the transfer learning models perform better than the ones without pre-trained weights, which is experimented on in the proposed dataset. The proposed hybrid CNN model outperforms the sequential CNN model as well as popular transfer learning models such as MobileNet and DenseNet without pre-trained weights on the proposed dataset.
+                Index Terms—Building Infrastructure, Image Classification, Sequential CNN, Hybrid CNN, Transfer Learning.</p>
+
+            <a class="btn" href="https://github.com/Mahmud-CSE16/Building-Infrastructure-Classification" target="blank" class="btn">View Dataset</a>
+            <a class="btn" href="#" target="blank" class="btn">View The Paper</a>
+       </div>
         
-        <!-- Gellary -->
+        <!-- Dataset Gellary -->
         <div class="header" style="width: 100%; margin-top: 80px; margin-bottom: 20px;">
             <h1 style="color: #f09053;">Dataset Samples</h1>
             <p style="font-weight: 300;"> The dataset contains 1500 images divided into six classes. Brick houses, mosques, temples, skyscrapers, tin shed houses, and mud houses are among the classes.</p>
@@ -506,6 +524,35 @@
                 <img src="images/data/mud_house_35.jpg" style="width:100%">
             </div>
         </div>
+
+
+        <!-- Classification -->
+
+        <div class="header" style="width: 100%; margin-top: 80px; margin-bottom: 30px;">
+            <h1 style="color: #f09053;">Classification</h1>
+            <p style="font-weight: 300;">For the image classification, two types of convolutional neural networks (CNN) architecture are proposed, the first one is sequential CNN and another one is hybrid CNN.</p>
+        </div>
+
+        <div class="text" style="width: 100%;">
+            <!-- <h2 style="color: #f09053; margin-bottom: 10px;">Building Infrastructure Classification with Hybrid Convolutional Neural Network Architecture</h2> -->
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, voluptatum iste iure repellat, tempore recusandae cum officiis esse nostrum culpa quo qui numquam amet architecto. Alias enim molestiae illum, magni eos tempora placeat vel quibusdam dolorum eius neque repudiandae magnam incidunt rem, dicta facilis eveniet velit. Odit quam voluptatibus reiciendis quibusdam, velit sit quasi quod iste tempora illo iure est dolores aliquam quae veritatis quaerat autem numquam enim illum in deleniti similique? Amet, temporibus mollitia! Praesentium non commodi vel culpa a expedita dolorum nulla inventore laboriosam corrupti excepturi modi, vero harum deleniti odit porro beatae totam repellat. Qui, ipsam ratione?</p>
+       </div>
+
+       
+
+        <!-- Object Detection -->
+
+        <div class="header" style="width: 100%; margin-top: 80px; margin-bottom: 30px;">
+            <h1 style="color: #f09053;">Object Detection</h1>
+            <p style="font-weight: 300;">Object detection by SSD MobileNet and YOLO</p>
+        </div>
+
+        <div class="text" style="width: 100%;">
+            <!-- <h2 style="color: #f09053; margin-bottom: 10px;">Building Infrastructure Classification with Hybrid Convolutional Neural Network Architecture</h2> -->
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, voluptatum iste iure repellat, tempore recusandae cum officiis esse nostrum culpa quo qui numquam amet architecto. Alias enim molestiae illum, magni eos tempora placeat vel quibusdam dolorum eius neque repudiandae magnam incidunt rem, dicta facilis eveniet velit. Odit quam voluptatibus reiciendis quibusdam, velit sit quasi quod iste tempora illo iure est dolores aliquam quae veritatis quaerat autem numquam enim illum in deleniti similique? Amet, temporibus mollitia! Praesentium non commodi vel culpa a expedita dolorum nulla inventore laboriosam corrupti excepturi modi, vero harum deleniti odit porro beatae totam repellat. Qui, ipsam ratione?</p>
+       </div>
+
+
 
         <!-- Authors -->
         <div class="header" style="width: 100%; margin-top: 80px; margin-bottom: 20px;">
